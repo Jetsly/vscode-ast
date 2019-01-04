@@ -1,6 +1,6 @@
 # Extension for Visual Studio Code
 
-VS Code Extension box
+VS Code Extension boxßß
 
 ## extensions
 
