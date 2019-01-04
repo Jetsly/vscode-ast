@@ -18,15 +18,10 @@ export function activate(context: vscode.ExtensionContext) {
       const editor = vscode.window.activeTextEditor;
       if (editor !== undefined) {
         const code: string = editor.document.getText();
-        editor.selection = new vscode.Selection(posToLine(code, pos), posToLine(code, end));
-        // const range = editor.visibleRanges[0];
-        // const [viewStart, viewEnd] = range;
-        // const halfViewH = (viewEnd.line - viewStart.line) / 2;
-        const halfViewH = 15;
-        const targetLine = code.slice(0, pos).split('\n').length;
-        const posStart = targetLine - halfViewH < 0 ? 0 : targetLine - halfViewH;
-        const posEnd = targetLine + halfViewH;
-        editor.revealRange(new vscode.Range(posStart, 0, posEnd, 0 ));
+        const starPos = posToLine(code, pos);
+        const endPos = posToLine(code, end);
+        editor.selection = new vscode.Selection(starPos, endPos);
+        editor.revealRange(new vscode.Range(starPos,endPos),vscode.TextEditorRevealType.InCenter);
       }
     })
   );

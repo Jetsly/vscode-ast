@@ -9,10 +9,7 @@
     "vscode": "^1.30.0"
   },
   "icon": "resources/ast.png",
-  "bugs": {
-    "url": "https://github.com:Jetsly/vscode-ast/issues",
-    "email": "cnljli@live.com"
-  },
+  "bugs": "https://github.com:Jetsly/vscode-ast/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/Jetsly/vscode-ast.git"
