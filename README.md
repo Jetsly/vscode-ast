@@ -1,3 +1,7 @@
+[![Latest Release](https://vsmarketplacebadge.apphb.com/version-short/ddot.vscode-ast.svg)](https://marketplace.visualstudio.com/items?itemName=ddot.vscode-ast)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/ddot.vscode-ast.svg)](https://marketplace.visualstudio.com/items?itemName=ddot.vscode-ast)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating-short/ddot.vscode-ast.svg)](https://marketplace.visualstudio.com/items?itemName=ddot.vscode-ast#review-details)
+
 # Ast explorer for Visual Studio Code
 
 VS Code package to show your JavaScript / TypeScript abstract syntax tree
