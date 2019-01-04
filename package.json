@@ -1,33 +1,55 @@
 {
   "name": "vscode-ast",
   "displayName": "vscode-ast",
-  "description": "Ast",
+  "description": "JavaScript / TypeScript Abstract Syntax Tree",
   "version": "0.0.1",
+  "publisher": "ddot",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.30.0"
   },
+  "icon": "resources/ast.png",
+  "bugs": {
+    "url": "https://github.com:Jetsly/vscode-ast/issues",
+    "email": "cnljli@live.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Jetsly/vscode-ast.git"
+  },
   "categories": [
+    "Programming Languages",
     "Other"
   ],
-  "activationEvents": [
-    "onView:ast.views.explorer"
+  "keywords": [
+    "Ast",
+    "typescript"
   ],
-  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:javascript",
+		"onLanguage:javascriptreact",
+    "onLanguage:typescript",
+		"onLanguage:typescriptreact"
+  ],
+  "main": "./out/extension",
   "contributes": {
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "ast",
-          "title": "Ast",
-          "icon": "media/tree.svg"
+    "configuration": {
+      "type": "object",
+      "title": "ast - Ast configuration",
+      "properties": {
+        "ast.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "enable/disable this extension"
         }
-      ]
+      }
     },
     "views": {
-      "ast": [
+      "explorer": [
         {
           "id": "ast.views.explorer",
-          "name": "explorer"
+          "name": "ast explorer",
+          "when": "astEnable"
         }
       ]
     },
@@ -64,5 +86,8 @@
     "tslint": "^5.8.0",
     "@types/node": "^8.10.25",
     "@types/mocha": "^2.2.42"
+  },
+  "dependencies": {
+    "typescript": "^3.1.4"
   }
 }

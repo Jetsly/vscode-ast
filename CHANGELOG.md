@@ -3,5 +3,6 @@ All notable changes to the "vscode-ast" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
-- Initial release
+## [0.0.1]
+- show ast syntax type
+- Positioning source

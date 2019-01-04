@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import * as ts from 'typescript';
 
-const SELECTION_CODE = 'ast.views.explorer.selection-code';
+export const SELECTION_CODE = 'ast.views.explorer.selection-code';
 
 export function syntaxKindToName(kind: ts.SyntaxKind) {
   return ts.SyntaxKind[kind];
@@ -93,33 +93,5 @@ export class AstTreeDataProvider implements vscode.TreeDataProvider<AstNode> {
 
   public getChildren(element?: AstNode): AstNode[] | Thenable<AstNode[]> {
     return element ? this.model.getChildren(element) : this.model.roots;
-  }
-}
-export class AstExplorer {
-  constructor(context: vscode.ExtensionContext) {
-    const astModel = new AstModel();
-    const treeDataProvider = new AstTreeDataProvider(astModel);
-    vscode.window.createTreeView('ast.views.explorer', {
-      treeDataProvider,
-    });
-    context.subscriptions.push(
-      vscode.commands.registerCommand(SELECTION_CODE, (pos, end) => {
-        const editor = vscode.window.activeTextEditor;
-        if (editor !== undefined) {
-          const code: string = editor.document.getText();
-          editor.selection = new vscode.Selection(posToLine(code, pos), posToLine(code, end));
-        }
-      })
-    );
-    context.subscriptions.push(
-      vscode.commands.registerCommand('ast.views.explorer.refreshEntry', () =>
-        treeDataProvider.refresh()
-      )
-    );
-    context.subscriptions.push(
-      vscode.window.onDidChangeActiveTextEditor(() => {
-        treeDataProvider.refresh();
-      })
-    );
   }
 }
