@@ -26,8 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
         const targetLine = code.slice(0, pos).split('\n').length;
         const posStart = targetLine - halfViewH < 0 ? 0 : targetLine - halfViewH;
         const posEnd = targetLine + halfViewH;
-        console.log(posStart, posEnd, halfViewH);
-        editor.revealRange( new vscode.Range(posStart, 0, posEnd, 0 ));
+        editor.revealRange(new vscode.Range(posStart, 0, posEnd, 0 ));
       }
     })
   );

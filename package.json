@@ -2,7 +2,7 @@
   "name": "vscode-ast",
   "displayName": "vscode-ast",
   "description": "JavaScript / TypeScript Abstract Syntax Tree",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "ddot",
   "license": "MIT",
   "engines": {

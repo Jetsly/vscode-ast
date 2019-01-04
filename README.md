@@ -24,3 +24,7 @@ ext install ddot.vscode-ast
 
 #### ast.enable (default: true)
 enable/disable this extension
+
+### contributors
+
+* Icon made by [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect) from www.flaticon.com 
