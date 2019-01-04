@@ -19,6 +19,15 @@ export function activate(context: vscode.ExtensionContext) {
       if (editor !== undefined) {
         const code: string = editor.document.getText();
         editor.selection = new vscode.Selection(posToLine(code, pos), posToLine(code, end));
+        // const range = editor.visibleRanges[0];
+        // const [viewStart, viewEnd] = range;
+        // const halfViewH = (viewEnd.line - viewStart.line) / 2;
+        const halfViewH = 15;
+        const targetLine = code.slice(0, pos).split('\n').length;
+        const posStart = targetLine - halfViewH < 0 ? 0 : targetLine - halfViewH;
+        const posEnd = targetLine + halfViewH;
+        console.log(posStart, posEnd, halfViewH);
+        editor.revealRange( new vscode.Range(posStart, 0, posEnd, 0 ));
       }
     })
   );
