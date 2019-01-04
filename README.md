@@ -4,7 +4,7 @@ VS Code package to show your JavaScript / TypeScript abstract syntax tree
 
 ## Features
 
-![feature X](./images/feature.png)
+![feature](https://raw.githubusercontent.com/Jetsly/vscode-ast/master/images/feature.png)
 
 ## Installation
 
